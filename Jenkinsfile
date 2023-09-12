@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('list directory') {
           steps {
-            sh 'ls -la'
+            sh 'pwd && ls -la'
           }
         }
 

@@ -1,6 +1,12 @@
+// module.exports = {
+//   "lintOnSave": false,
+//   "transpileDependencies": [
+//     "vuetify"
+//   ]
+// }
 module.exports = {
-  "lintOnSave": false,
-  "transpileDependencies": [
-    "vuetify"
-  ]
+  preset: '@vue/cli-plugin-unit-jest',
+  transform: {
+    '^.+\\.vue$': 'vue-jest'
+  }
 }

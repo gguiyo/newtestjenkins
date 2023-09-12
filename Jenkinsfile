@@ -8,19 +8,14 @@ pipeline {
     }
 
     stage('list directory') {
-      parallel {
-        stage('list directory') {
-          steps {
-            sh 'pwd && ls -la'
-          }
-        }
+      steps {
+        sh 'pwd && ls -la'
+      }
+    }
 
-        stage('front-end unit test') {
-          steps {
-            sh 'cd curriculum-front && npm i'
-          }
-        }
-
+    stage('Build') {
+      steps {
+        sh 'docker build -f curriculum-front/Dockerfile .'
       }
     }
 
